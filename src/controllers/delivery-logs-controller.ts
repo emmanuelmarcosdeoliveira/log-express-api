@@ -20,6 +20,9 @@ class DeliveryLogsController {
     if (delivery.status === "processing") {
       throw new AppError("change status to shipped", 404);
     }
+    if (delivery.status === "delivered") {
+      throw new AppError("this order has already been delivered");
+    }
 
     await prisma.deliveryLog.create({
       data: {
@@ -28,6 +31,28 @@ class DeliveryLogsController {
       },
     });
     return response.status(201).json();
+  }
+
+  async show(request: Request, response: Response) {
+    const paramsSchema = z.object({
+      delivery_id: z.string().uuid(),
+    });
+
+    const { delivery_id } = paramsSchema.parse(request.params);
+    const delivery = await prisma.delivery.findUnique({
+      where: { id: delivery_id },
+      include: {
+        user: true,
+        logs: true,
+      },
+    });
+    if (
+      request.user?.role === "customer" &&
+      request.user.id !== delivery?.userId
+    ) {
+      throw new AppError("the user can only view their deliveries", 401);
+    }
+    response.json(delivery);
   }
 }
 export { DeliveryLogsController };
