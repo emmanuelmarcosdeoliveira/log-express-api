@@ -4,7 +4,8 @@
   "description": "API de Gerenciamento de encomendas",
   "main": "src/server.ts",
   "scripts": {
-    "dev": "tsx watch --env-file .env src/server.ts"
+    "dev": "tsx watch --env-file .env src/server.ts",
+    "test:dev": "NODE_OPTIONS=--experimental-vm-modules npx jest --watchAll --runInBand"
   },
   "keywords": [
     "API",
@@ -31,6 +32,7 @@
     "prisma": "^5.19.1",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "tsx": "^4.16.2",
     "typescript": "^5.5.4"
   }
