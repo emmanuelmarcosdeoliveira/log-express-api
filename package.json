@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "API de Gerenciamento de encomendas",
   "main": "src/server.ts",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "tsx watch --env-file .env src/server.ts",
     "test:dev": "NODE_OPTIONS=--experimental-vm-modules npx jest --watchAll --runInBand",
-    "build": "tsup src --out-dir build"
+    "build": "tsup src --out-dir build",
+    "start": "node build/server.js"
   },
   "keywords": [
     "API",
