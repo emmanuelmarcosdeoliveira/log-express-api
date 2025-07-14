@@ -46,6 +46,10 @@ class DeliveryLogsController {
         logs: true,
       },
     });
+    if (!delivery) {
+      return response.status(404).json({ message: "delivery not fund" });
+    }
+
     if (
       request.user?.role === "customer" &&
       request.user.id !== delivery?.userId
