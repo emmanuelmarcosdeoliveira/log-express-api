@@ -1,4 +1,9 @@
-# 📦 Log Express API
+![Restaurant Banner](https://res.cloudinary.com/delo0gvyb/image/upload/v1753912065/Lucid_Realism_Create_a_detailed_illustration_of_a_backend_appl_3_bv6jhu.jpg)
+
+<div align=center>
+
+  # 📦 Log Express API
+</div>
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=plastic&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=plastic&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
