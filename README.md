@@ -210,8 +210,6 @@ npm run test:dev
 # Testes unitários
 npm test
 
-# Cobertura de testes
-npm run test:coverage
 ```
 
 ### Estrutura de Testes
@@ -233,7 +231,7 @@ npm run build
 ### Variáveis de Ambiente para Produção
 
 ```env
-DATABASE_URL="sua-url-do-banco-producao"
+DATABASE_URL="sua-url-do-banco-produção"
 JWT_SECRET="chave-secreta-forte"
 PORT=3333
 NODE_ENV=production
